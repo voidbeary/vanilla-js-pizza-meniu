@@ -6,6 +6,7 @@ class Pizza {
     this.toppings = formElement.elements.toppings.value
       .split(",")
       .map((topping) => topping.trim());
+    this.photo = formElement.elements.photo.value;
   }
 }
 export { Pizza };

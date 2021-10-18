@@ -24,6 +24,11 @@ function createListItem(pizza) {
   const toppingsText = document.createTextNode(pizza.toppings.join(", ") + " ");
   newListItem.appendChild(toppingsText);
 
+  if (pizza.photo) {
+    const photoText = document.createTextNode(pizza.photo + " ");
+    newListItem.appendChild(photoText);
+  }
+
   return newListItem;
 }
 export { renderPizzas, renderPizza };
