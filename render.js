@@ -21,6 +21,9 @@ function createListItem(pizza) {
   const heatText = document.createTextNode(pizza.heat + " ");
   newListItem.appendChild(heatText);
 
+  const toppingsText = document.createTextNode(pizza.toppings.join(", ") + " ");
+  newListItem.appendChild(toppingsText);
+
   return newListItem;
 }
 export { renderPizzas, renderPizza };

@@ -1,7 +1,11 @@
 import { savePizza } from "./pizzaStorage.js";
 import { Pizza } from "./pizza.js";
 import { renderPizza } from "./render.js";
-import { validatePizzaName, validateForm } from "./validate.js";
+import {
+  validatePizzaName,
+  validateForm,
+  validateToppings,
+} from "./validate.js";
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -22,7 +26,16 @@ function handleNameInputChange(e) {
   const pizzaName = e.target;
   validatePizzaName(pizzaName);
 }
+function handleToppingsInputChange(e) {
+  const pizzaToppings = e.target;
+  validateToppings(pizzaToppings);
+}
 function handleBlur(e) {
   e.target.reportValidity();
 }
-export { handleSubmit, handleNameInputChange, handleBlur };
+export {
+  handleSubmit,
+  handleNameInputChange,
+  handleBlur,
+  handleToppingsInputChange,
+};
