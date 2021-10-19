@@ -1,4 +1,4 @@
-import { savePizza } from "./pizzaStorage.js";
+import { savePizza, removePizza } from "./pizzaStorage.js";
 import { Pizza } from "./pizza.js";
 import { renderPizza } from "./render.js";
 import {
@@ -33,9 +33,17 @@ function handleToppingsInputChange(e) {
 function handleBlur(e) {
   e.target.reportValidity();
 }
+function handleDelete(e) {
+  const pizzaName = e.target.value;
+  if (confirm(`Are you sure you want to delete pizza named ${pizzaName}?`)) {
+    removePizza(pizzaName);
+    document.getElementById("list-item-pizza-" + pizzaName).remove();
+  }
+}
 export {
   handleSubmit,
   handleNameInputChange,
   handleBlur,
   handleToppingsInputChange,
+  handleDelete,
 };

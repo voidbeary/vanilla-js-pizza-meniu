@@ -9,4 +9,9 @@ function getPizzas() {
 
   return sessionStoragePizzas;
 }
-export { savePizza, getPizzas };
+function removePizza(name) {
+  const oldPizzas = getPizzas();
+  const newPizzas = oldPizzas.filter((pizza) => pizza.name !== name);
+  sessionStorage.setItem("pizzas", JSON.stringify(newPizzas));
+}
+export { savePizza, getPizzas, removePizza };

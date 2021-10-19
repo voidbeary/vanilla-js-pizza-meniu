@@ -1,5 +1,6 @@
-import { getPizzas } from "./pizzaStorage.js";
+import { getPizzas, removePizza } from "./pizzaStorage.js";
 import { pizzasPhotos } from "./pizzasPhotos.js";
+import { handleDelete } from "./handlers.js";
 function renderPizzas() {
   const sessionStoragePizzas = getPizzas();
   sessionStoragePizzas.forEach(renderPizza);
@@ -12,8 +13,8 @@ function renderPizza(pizza) {
 }
 function createListItem(pizza) {
   const newListItem = document.createElement("li");
+  newListItem.setAttribute("id", "list-item-pizza-" + pizza.name);
   newListItem.classList.add("pizza-list-item");
-
   const divElement = document.createElement("div");
   divElement.classList.add("margin-bot-auto");
   const pizzaNameParagraph = document.createElement("h2");
@@ -43,6 +44,8 @@ function createListItem(pizza) {
 
   const deleteButtonElement = document.createElement("button");
   deleteButtonElement.setAttribute("type", "button");
+  deleteButtonElement.setAttribute("value", pizza.name);
+  deleteButtonElement.onclick = handleDelete;
   const buttonText = document.createTextNode("Delete button");
   deleteButtonElement.appendChild(buttonText);
   deleteButtonElement.classList.add("delete-button");
