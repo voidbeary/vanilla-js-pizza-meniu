@@ -46,7 +46,7 @@ function createListItem(pizza) {
   deleteButtonElement.setAttribute("type", "button");
   deleteButtonElement.setAttribute("value", pizza.name);
   deleteButtonElement.onclick = handleDelete;
-  const buttonText = document.createTextNode("Delete button");
+  const buttonText = document.createTextNode("Delete pizza");
   deleteButtonElement.appendChild(buttonText);
   deleteButtonElement.classList.add("delete-button");
   newListItem.appendChild(deleteButtonElement);
