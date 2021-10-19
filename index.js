@@ -8,14 +8,16 @@ import {
 
 const formElement = document.querySelector("form");
 formElement.onsubmit = handleSubmit;
+for (let i = 0; i < formElement.elements.length - 1; i++) {
+  const element = formElement.elements[i];
+  element.onblur = handleBlur;
+}
 
 const nameInputElement = document.querySelector("#name");
 nameInputElement.oninput = handleNameInputChange;
-nameInputElement.onblur = handleBlur;
 
 const toppingsInputElement = document.querySelector("#toppings");
 toppingsInputElement.oninput = handleToppingsInputChange;
-toppingsInputElement.onblur = handleBlur;
 
 renderPhotos();
 renderPizzas();
