@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizzeria Meniu</title>
     <link rel="stylesheet" href="style.css">
     <script defer type="module" src="index.js"></script>
@@ -9,24 +12,27 @@
 
 <body>
     <main>
+        <h1>Pizzeria Meniu</h1>
         <form>
             <label for="name">Name</label>
-            <input id="name" maxlength="30" type="text" required></input>
+            <input id="name" maxlength="30" type="text" class="pizza-input" required></input>
             <label for="price">Price</label>
-            <input id="price" step="0.01" type="number" min="0.01" required></input>
+            <input id="price" step="0.01" type="number" min="0.01" class="pizza-input" required></input>
             <label for="heat">Heat</label>
-            <input type="range" id="heat" min="0" max="3" step="1" value="0"></input>
+            <input type="range" id="heat" min="0" max="3" step="1" value="0" class="pizza-input"></input>
             <label for="toppings">Toppings</label>
-            <input id="toppings" type="text"></input>
-            <label for="pizza-photo-1" id="photo-label-1"></label>
-            <input type="radio" id="pizza-photo-1" name="photo" value="pizza-photo-1"></input>
-            <label for="pizza-photo-2" id="photo-label-2"></label>
-            <input type="radio" id="pizza-photo-2" name="photo" value="pizza-photo-2"></input>
-            <label for="pizza-photo-3" id="photo-label-3"></label>
-            <input type="radio" id="pizza-photo-3" name="photo" value="pizza-photo-3"></input>
-            <input type="submit" value="Add Pizza"></input>
+            <input id="toppings" type="text" class="pizza-input"></input>
+            <div class="pizza-photos">
+                <label id="photo-label-1"><input type="radio" id="pizza-photo-1" name="photo" value="pizza-photo-1"
+                        class="radio-input"></input></label>
+                <label id="photo-label-2"><input type="radio" id="pizza-photo-2" name="photo" value="pizza-photo-2"
+                        class="radio-input"></input></label>
+                <label id="photo-label-3"><input type="radio" id="pizza-photo-3" name="photo" value="pizza-photo-3"
+                        class="radio-input"></input></label>
+            </div>
+            <input type="submit" value="Add Pizza" class="add-pizza-button"></input>
         </form>
-        <ul id="pizza-list">
+        <ul id="pizza-list" class="pizza-list">
         </ul>
     </main>
 </body>

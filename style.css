@@ -1,0 +1,79 @@
+html {
+}
+
+main {
+  width: 100%;
+}
+body {
+  width: 100%;
+  margin: 0px;
+}
+h1 {
+  text-align: center;
+}
+form {
+  box-sizing: inherit;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0px auto;
+  padding: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.radio-input {
+  display: none;
+}
+.radio-input:checked + .radio-photo {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.radio-input:hover + .radio-photo {
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.radio-photo {
+  width: 100%;
+  margin: 2% auto;
+}
+.pizza-photos {
+  display: flex;
+  flex-direction: row;
+}
+.pizza-input {
+  padding: 5px;
+  margin: 5px 0;
+}
+.add-pizza-button {
+  padding: 5px;
+  margin: 5px 0;
+}
+.pizza-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+.pizza-list-item {
+  display: flex;
+  flex-wrap: wrap;
+  width: 25vw;
+  padding: 2%;
+  margin: 2% auto;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.pizza-photo {
+  width: 100%;
+  height: auto;
+}
+@media only screen and (max-width: 600px) {
+  form {
+    width: 80%;
+    padding: 8%;
+  }
+  .pizza-list-item {
+    width: 80%;
+    padding: 8%;
+  }
+}
