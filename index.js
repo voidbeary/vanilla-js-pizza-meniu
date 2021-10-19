@@ -1,4 +1,4 @@
-import { renderPizzas } from "./render.js";
+import { renderPizzas, renderPhotos } from "./render.js";
 import {
   handleSubmit,
   handleNameInputChange,
@@ -17,4 +17,5 @@ const toppingsInputElement = document.querySelector("#toppings");
 toppingsInputElement.onchange = handleToppingsInputChange;
 toppingsInputElement.onblur = handleBlur;
 
+renderPhotos();
 renderPizzas();
